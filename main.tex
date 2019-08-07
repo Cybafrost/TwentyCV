@@ -1,0 +1,164 @@
+\documentclass[
+  a4paper, 
+%   showframes,
+%   maincolor=cvgreen,
+%   sectioncolor=red,
+%   subsectioncolor=orange
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.4\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+% profile picture
+\cvprofilepic{pics/profile.png}
+% your name
+\cvname{Ons Chiboub}
+% job title/career
+\cvjobtitle{Responsable environnement}
+% date of birth
+\cvbirthday{1 Décembre 1994}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{L'aouina 2045, Tunis, Tunisia}
+% phone number
+\cvphone{+216 20 730 934}
+\cvskype{Chiboub.13}
+% personal website
+\cvlinkedin{linkedin.com/in/ons-chiboub-356905167/}
+% email address
+\cvmail{onschiboub94@gmail.com}
+% pgp key
+\cvgit{github.com/Ons.Chiboub}{}
+% add additional information
+% \newcommand{\additional}{some more?}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% overwrite default icons and order of personal information
+% \renewcommand{\personaltable}{%
+% 	\begin{personal}[0.8em]
+% 		\circleicon{\faKey}      & \cvkey  \\
+% 		\circleicon{\faAt}       & \cvmail \\
+% 		\circleicon{\faGlobe}    & \cvsite \\
+% 		\circleicon{\faPhone}    & \cvphone \\
+% 		\circleicon{\faEnvelope} & \cvaddress \\
+% 		\circleicon{\faInfo}     & \cvbirthday \\
+% 		% add another line
+% 		\circleicon{\faQuestion} & \additional
+% 	\end{personal}
+% }
+
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+%Skills
+	\profilesection{Skills}
+		\barskill{\faShield}{Autocad}{90}
+		\barskill{\faGlobe}{ArcGIS}{90}
+		\barskill{\faWifi}{QGIS}{80}
+		\barskill{\faCode}{SNAP}{80}
+		\barskill{\faCodepen}{ROIPAC NSBAS}{80
+		\barskill{\faMedium}{Maple}{70}
+		\barskill{\faProductHunt}{Python}{70}
+		\barskill{\faFileWordO}{Microsoft office}{70}
+
+%languages
+	\profilesection{Languages}
+		\pointskill{\flag{TN.png}}{Arabic}{5}		
+  		\pointskill{\flag{GB.png}}{English}{5}
+  		\pointskill{\flag{FR.png}}{French}{4}
+}
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+\makefrontsidebar
+\cvsection{Profil:}
+\aboutme{Information security engineer with intensive experience running simulate a full-scale, high-value penetration test and creating written reports, detailing assessment findings and recommendations.}
+\cvsection{Expérience professionnelle:}
+\begin{cvtable}
+	\cvitem{Novembre 2018}{Responsable environnement}{PreVentis}
+		{\faArrowCircleRight\ Réalisation des études d’impacts sur l’environnement et des études de dépollution des différentes sociétés travaillant dans plusieurs secteurs d’activité (aéronautique, alimentaire, textile, pharmaceutique, automobile,…).
+		\\ \faArrowCircleRight\ Préparation de cahier des charges environnementales.
+		\\ \faArrowCircleRight\ Elaboration de plan de gestion environnemental.
+		\\ \faArrowCircleRight\ Réalisation des visites sur sites pour assurer la collecte des données nécessaires à l’élaboration des études environnementales.
+		\\ \faArrowCircleRight\ Participation au dimensionnement de la station de traitement des eaux usées du groupe abou walid.
+		\\ \faArrowCircleRight\ Participation  à la préparation des études de dangers.
+		\\ \faArrowCircleRight\ Collaboration avec une équipe multidisciplinaire (étude de danger, sécurité incendie, plans...)  afin d’assurer une étude qui répond aux exigences des autorités.}
+			
+	\cvitem{Mars-Juin 2018}{Ingénieur stagiaire}{laboratoire LaSTIG — Equipe MATIS}
+	{\faArrowCircleRight\ Collectes des données (données météorologiques, données de terrain, données du registre parcellaire graphique de l’IGN, données satellitaires Sentinel 1 et données optiques)
+		\\ \faArrowCircleRight\ Traitement des images  satellitaires à l’aide du logiciel SNAP environnementales.
+		\\ \faArrowCircleRight\ Calcul de cohérence interférométrique et de coefficient de rétrodiffusion.
+		\\ \faArrowCircleRight\ Suivi des activités agricoles à travers la réponse du produit interférométrique.
+		\\ \faArrowCircleRight\ Suivi des déformations terrestres par logiciel SNAP et par la chaine de traitement NSBAS ((New Small BAslines Subset).}
+	\cvitem{Juillet 2017}{Ingénieur stagiaire}{Centre national de la cartographie et de la télédétection}{
+	\faArrowCircleRight\ Reconnaissance de la photogrammétrie et ses domaines d’application.
+		\\ \faArrowCircleRight\ Etude de relation entre la géomatique et la géologie. 
+		\\ \faArrowCircleRight\ Installed security updates and patches.}
+	\cvitem{Juin 2017}{Ingénieur stagiaire}{Afric Soil}{
+	\faArrowCircleRight\ Réalisation des essais de laboratoire d’analyse de la qualité des sols.
+		\\ \faArrowCircleRight\ Réalisation d’une étude géotechnique d’un projet de construction d’une usine à sfax.}
+\end{cvtable}
+
+\cvsection{Conaissances Profesionnelles:}
+\subsection{Publications}
+\begin{cvtable}
+	\cvitem{06-2018}{Ons Chiboub,Amjad Kallel,Pierre-Louis Frison et Mailys Lopes }{LaSTIG}
+		{\faCertificate\ Monitoring of Grasslands Management Practices Using Interferometric Products Sentinel-1}
+\end{cvtable}
+\subsection{Etudes}
+\begin{cvtable}
+	\cvitem{2009--2012}{Information Technology}{Military Academy}
+		{\faGraduationCap\ Master of Engineering}
+	\cvitem{2006--2009}{MPCI: Mathematics, Physics, Chemistry and Informatics.}{Preparatory School for engineering}
+		{\faGraduationCap\ Bachelor of science}
+	\cvitem{2006--2002}{Mathematics}{9 Avril 1938 high School}
+		{\faGraduationCap\ Baccalaureate}
+\end{cvtable}
+\end{document} 

@@ -1,0 +1,164 @@
+\documentclass[
+  a4paper, 
+%   showframes,
+%   maincolor=cvgreen,
+%   sectioncolor=red,
+%   subsectioncolor=orange
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.4\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+% profile picture
+\cvprofilepic{pics/profile.png}
+% your name
+\cvname{Ahmed Chiboub}
+% job title/career
+\cvjobtitle{Information Security Engineer}
+% date of birth
+\cvbirthday{Jun 4, 1987}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{L'aouina 2045, Tunis, Tunisia}
+% phone number
+\cvphone{+216 52 900 666}
+\cvskype{Chiboub.13}
+% personal website
+\cvlinkedin{linkedin.com/in/ahmedchiboub}
+% email address
+\cvmail{Ahmed.chiboub@pm.me}
+% pgp key
+\cvgit{github.com/Cybafrost}{}
+% add additional information
+% \newcommand{\additional}{some more?}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% overwrite default icons and order of personal information
+% \renewcommand{\personaltable}{%
+% 	\begin{personal}[0.8em]
+% 		\circleicon{\faKey}      & \cvkey  \\
+% 		\circleicon{\faAt}       & \cvmail \\
+% 		\circleicon{\faGlobe}    & \cvsite \\
+% 		\circleicon{\faPhone}    & \cvphone \\
+% 		\circleicon{\faEnvelope} & \cvaddress \\
+% 		\circleicon{\faInfo}     & \cvbirthday \\
+% 		% add another line
+% 		\circleicon{\faQuestion} & \additional
+% 	\end{personal}
+% }
+
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+%Skills
+	\profilesection{Skills}
+		\barskill{\faShield}{Information Security Standards}{90}
+		\barskill{\faSitemap}{Network Penetration testing}{80}
+		\barskill{\faChrome}{WebApp Penetration testing}{80}
+		\barskill{\faWifi}{Wireless Penetration testing}{60}
+		\barskill{\faCode}{Source Code Security auditing}{70}
+		\barskill{\faLinux}{Linux Administration}{90}
+		\barskill{\faWindows}{Windows Administration}{60}
+		\barskill{\faProductHunt}{Python}{80}
+		\barskill{\faCoffee}{Java}{70}		
+		\barskill{\faDiamond}{Ruby}{50}
+
+%languages
+	\profilesection{Languages}
+		\pointskill{\flag{TN.png}}{Arabic}{5}		
+  		\pointskill{\flag{GB.png}}{English}{5}
+  		\pointskill{\flag{FR.png}}{French}{4}
+}
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+\cvsection{About me:}
+\aboutme{Information security engineer with intensive experience running simulate a full-scale, high-value penetration test and creating written reports, detailing assessment findings and recommendations.\\ Well-versed in information security and penetration testing standards with strong critical thinking and able to thrive in fast-paced and challenging environments where accuracy and efficiency matter.}
+\cvsection{Working Experience:}
+\begin{cvtable}
+	\cvitem{Since 2016}{Head of Technical Department}{DISA: Counter-Terrorism Division}
+		{\faArrowCircleRight\ Performed penetration testing of the Defense Intelligence and Security Agency networks and systems to emulate threats and improve computer 		network defense posture.
+		\\ \faArrowCircleRight\ Conducted onsite penetration tests from an insider threat perspective.\\ \faArrowCircleRight\ Administrated web application periodic web application security assessment on the D.O.D website and internal Web applications.
+		\\ \faArrowCircleRight\ Developed Android and windows rootkits, documents Trojans,shell codes, cell trackers, a Waterholing system and co-performed social engineering operations including Phishing, Smishing and whaling.}	
+	\cvitem{2017--2018}{Cyber Security consultant}{French Defense: CyberDefense Operation Center}{\faMinusCircle\ Mission details are Classified.}
+	\cvitem{2014--2016}{Information System Administrator}{DOD: DHESR}{\faArrowCircleRight\ Conducted security appliances such as firewall (Pfsense), intrusion detection system (snort) and Security software (Kaspersky Security Center).
+		\\ \faArrowCircleRight\ Planed and implemented systems backups, coordinating
+recoveries.
+		\\ \faArrowCircleRight\ Developed utility programs and shell scripts (e.g., backup, integrity checks).}
+	\cvitem{2013--2014}{Network  Administrator}{DOD: DSCI}{\faArrowCircleRight\ Assigned routing protocols (Cisco routers and switches) and configured of authentication and authorization to services.
+		\\ \faArrowCircleRight\ Monitored networks to ensure security, availability and Information integrity using tools such as Wireshark, Iptraf, Tcpdump and Nagios.
+		\\ \faArrowCircleRight\ Installed security updates and patches.}
+\cvitem{2013--2014}{Information security and end user awareness instructor}{DOD: CIC}{\faArrowCircleRight\ Taught information Security, cryptography, Networking and
+basics programming languages (python, bash, Java).
+		\\ \faArrowCircleRight\ Organized and conducted Information Security awareness training.
+		\\ \faArrowCircleRight\ Taught signal intelligence.}
+\end{cvtable}
+
+
+\cvsection{Education:}
+\subsection{Postgraduate Training}
+\begin{cvtable}
+	\cvitem{03-2019}{Certifed Ethical Hacker}{EC-Council}
+		{\faCertificate\ Id:ECC6903148725}
+	\cvitem{10-2018}{Opensource Intelligence Training}{Nato School Oberammergau}{}
+	\cvitem{06-2018}{Penetration Testing Training}{BIT}{}
+\end{cvtable}
+\subsection{Study}
+\begin{cvtable}
+	\cvitem{2009--2012}{Information Technology}{Military Academy}
+		{\faGraduationCap\ Master of Engineering}
+	\cvitem{2006--2009}{MPCI: Mathematics, Physics, Chemistry and Information technology.}{Preparatory School for engineering}
+		{\faGraduationCap\ Bachelor of science}
+	\cvitem{2006--2002}{Mathematics}{9 Avril 1938 high School}
+		{\faGraduationCap\ Baccalaureate}
+\end{cvtable}
+\end{document} 
